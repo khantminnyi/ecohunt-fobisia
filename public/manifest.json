@@ -1,0 +1,58 @@
+{
+  "name": "EcoHunt AI - Clean the World",
+  "short_name": "EcoHunt AI",
+  "description": "Transform environmental cleanup into an exciting, gamified adventure. Hunt and clean real-world pollution areas while earning points and collaborating with friends.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["lifestyle", "social", "productivity"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Report Cleanup Area",
+      "short_name": "Report",
+      "description": "Quickly report a new cleanup area",
+      "url": "/camera",
+      "icons": [
+        {
+          "src": "/camera-icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Leaderboard",
+      "short_name": "Rankings",
+      "description": "Check your group rankings",
+      "url": "/groups",
+      "icons": [
+        {
+          "src": "/trophy-icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

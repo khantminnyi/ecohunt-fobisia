@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-full;
+  }
+  
+  body {
+    @apply h-full text-gray-900 bg-gray-50;
+  }
+  
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+  
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200;
+  }
+  
+  /* Input styles */
+  .input-primary {
+    @apply block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply rounded-xl bg-white p-6 shadow-sm border border-gray-200;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Severity indicators */
+  .severity-high {
+    @apply text-severity-high bg-red-50 border-red-200;
+  }
+  
+  .severity-medium {
+    @apply text-severity-medium bg-yellow-50 border-yellow-200;
+  }
+  
+  .severity-low {
+    @apply text-severity-low bg-green-50 border-green-200;
+  }
+  
+  /* Loading spinner */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-primary-500;
+  }
+  
+  /* Mobile-first touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Bottom navigation safe area */
+  .bottom-nav-safe {
+    @apply pb-safe-area-inset-bottom;
+  }
+}
+
+@layer utilities {
+  /* Safe area utilities for mobile */
+  .pb-safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .pt-safe-area-inset-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  /* Custom scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-md bg-gray-900/80 border border-gray-700/20;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+    opacity: 1;
+  }
+  80%, 100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotateZ(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotateZ(720deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.animate-confetti {
+  animation: confetti 3s ease-out forwards;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .mobile-padding {
+    @apply px-4;
+  }
+  
+  .mobile-text {
+    @apply text-sm;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .landscape-compact {
+    @apply py-2;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-primary-700;
+  }
+  
+  .card {
+    @apply border-2;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
